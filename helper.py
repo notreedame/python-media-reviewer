@@ -15,14 +15,14 @@ def edit_book(books):
     while True:
         print("\nEdit Book")
         print("-------------")
-        print("1. Title")
-        print("2. Author")
-        print("3. Finished Date")
-        print("4. Rating")
-        print("5. Notes")
-        print("6. Back")
+        print("1. Title         : {book.title}")
+        print("2. Author        : {book.author}")
+        print("3. Finished Date : {book.finished_date}")
+        print("4. Rating        : {book.stars}")
+        print("5. Notes         : {book.notes}")
+        print("6. Back to Previous Menu")
 
-        edit_book_choice = input("Select field to edit: ")
+        edit_book_choice = input(f"\nSelect field to edit: ")
 
         match edit_book_choice:
             case "1":
@@ -63,17 +63,17 @@ def edit_movie(movies):
     while True:
         print("\nEdit Movie")
         print("-------------")
-        print("1. Title")
-        print("2. Director")
-        print("3. Genre")
-        print("4. Language")
-        print("5. Watched Date")
-        print("6. Rating")
-        print("7. Notes")
-        print("8. Back")
+        print(f"1. Title        : {movie.title}")
+        print(f"2. Director     : {movie.director}")
+        print(f"3. Genre        : {movie.genre}")
+        print(f"4. Language     : {movie.language}")
+        print(f"5. Watched Date : {movie.watched_date}")
+        print(f"6. Rating       : {movie.stars}")
+        print(f"7. Notes        : {movie.notes}")
+        print(f"8. Back to Previous Menu")
 
 
-        edit_movie_choice= input("Select field to Edit: ")
+        edit_movie_choice= input(f"\nSelect field to Edit: ")
 
         match edit_movie_choice:
             case "1":

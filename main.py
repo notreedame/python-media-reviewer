@@ -7,8 +7,12 @@ books = []
 movies = []
 loop_continue = True
 
+book_file = "books.yaml" #constant
+movie_file = "movies.yaml"
+LOG_FILE = "media_tracker.log" #not yet used
+
 # Books
-with open("books.yaml", 'r') as b_file:
+with open(book_file, 'r') as b_file:
     data = yaml.safe_load(b_file)
     for b_data in data["books"]:
         book = Book(
@@ -22,7 +26,7 @@ with open("books.yaml", 'r') as b_file:
 
 
 # Moves
-with open("movies.yaml", 'r') as m_file:
+with open(movie_file, 'r') as m_file:
     data = yaml.safe_load(m_file)
     for m_data in data["movies"]:
         movie = Movie(
