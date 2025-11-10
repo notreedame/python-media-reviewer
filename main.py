@@ -1,41 +1,40 @@
-#learn git - ssh - pub key
-#git commit (save) git add, git push (push to the remote)
-#learn git branching strategy - features/(jira/trello ticket name)
-#create a pull req
-#constants
-#automated test cases
-#mise - python ve
-#virtual env wrapper
-#mk virtual enviroment book
-#comments
-#data structure should be coming from a diff file
-#inputs should come from a yaml file
-#logging - info and debug (json)
-#instrumenting metrics - how much memory it uses (performance)
-#prometheus metrics
-#w metrics -> can create audit logs
-#create a excel to log time IN OUT
-
-
 from books import Book
 from movies import Movie
 import helper as h
+import yaml
 
 books = []
 movies = []
 loop_continue = True
 
 # Books
-book1 = Book("The Great Gatsby", "F. Scott Fitzgerald", "2024-01-15", 8, "Classic novel about the American Dream")
-book2 = Book("To Kill a Mockingbird", "Harper Lee", "2024-02-20", 9, "Powerful story of racial injustice")
-book3 = Book("1984", "George Orwell", "2024-03-10", 8, "Dystopian masterpiece about totalitarianism")
+with open("books.yaml", 'r') as b_file:
+    data = yaml.safe_load(b_file)
+    for b_data in data["books"]:
+        book = Book(
+            title=b_data["title"],
+            author=b_data["author"],
+            finished_date=b_data.get("finished_date", ""),
+            stars=b_data.get("stars", 0),
+            notes=b_data.get("notes", "")
+        )
+        books.append(book)
 
-# Movies
-movie1 = Movie("Inception", "Christopher Nolan", "Sci-Fi", "English", "2024-01-08", 9, "Mind-bending thriller about dreams")
-movie2 = Movie("The Shawshank Redemption", "Frank Darabont", "Drama", "English", "2024-02-14", 10, "Best prison escape movie ever made")
-movie3 = Movie("Spirited Away", "Hayao Miyazaki", "Animation", "Japanese", "2024-03-05", 10, "Gorgeous Studio Ghibli masterpiece")
-books = [book1, book2, book3]
-movies = [movie1, movie2, movie3]
+
+# Moves
+with open("movies.yaml", 'r') as m_file:
+    data = yaml.safe_load(m_file)
+    for m_data in data["movies"]:
+        movie = Movie(
+            title=m_data["title"],
+            director=m_data["director"],
+            genre=m_data.get("genre", ""),
+            language=m_data.get("language", ""),
+            watched_date=m_data.get("watched_date", ""),
+            stars=m_data.get("stars", 0),
+            notes=m_data.get("notes", "")
+        )
+        movies.append(movie)
 
 while loop_continue:
     h.get_main_menu()

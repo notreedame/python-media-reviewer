@@ -109,7 +109,7 @@ def get_main_menu():
     print("===================================\n")
     print("              Main Menu")
     print("-----------------------------------")
-    print("1. books")
+    print("1. Books")
     print("2. Movies")
     print("3. Exit")
 

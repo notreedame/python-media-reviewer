@@ -1,0 +1,16 @@
+books:
+    - title: "Master and Margarita"
+      author: "Mikhail Bulgakov"
+      finished_date: "2024-01-15"
+      stars: 5
+      notes: "A fascinating blend of fantasy, romance, and political satire set in Soviet Russia."
+    - title: "1984"
+      author: "George Orwell"
+      finished_date: "2024-02-20"
+      stars: 4
+      notes: "A chilling dystopian novel about totalitarianism and surveillance."
+    - title: "The Hobbit"
+      author: "J.R.R. Tolkien"
+      finished_date: "2024-03-10"
+      stars: 5
+      notes: "A classic fantasy adventure that sets the stage for the Lord of the Rings."

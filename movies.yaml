@@ -1,0 +1,24 @@
+movies:
+  - title: Inception
+    director: Christopher Nolan
+    genre: Sci-Fi
+    language: English
+    watched_date: 2024-01-08
+    rating: 9
+    notes: Mind-bending thriller about dreams
+
+  - title: The Shawshank Redemption
+    director: Frank Darabont
+    genre: Drama
+    language: English
+    watched_date: 2024-02-14
+    rating: 10
+    notes: Best prison escape movie ever made
+
+  - title: Spirited Away
+    director: Hayao Miyazaki
+    genre: Animation
+    language: Japanese
+    watched_date: 2024-03-05
+    rating: 10
+    notes: Gorgeous Studio Ghibli masterpiece
