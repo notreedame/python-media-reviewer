@@ -1,4 +1,3 @@
-
 class Book:
     def __init__(self,title,author,finished_date,stars,notes):
         self.title=title
