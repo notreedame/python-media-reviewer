@@ -1,0 +1,7 @@
+{"message": "Application started", "timestamp": "2025-11-11 20:29:12"}
+{"message": "Books data loaded", "book_count": 5}
+{"message": "Movies data loaded", "movie_count": 5}
+{"message": "Book notes updated", "extra_data": {"action": "update_book", "field": "notes", "book": "Giovanni's Room", "new_value": "relatable book"}}
+{"message": "Application exited", "timestamp": "2025-11-11 20:29:30"}
+{"message": "Movies data saved", "movie_count": 5}
+{"message": "Books data saved", "book_count": 5}

@@ -1,4 +1,3 @@
-
 class Movie:
     #Movie class constructor
     def __init__(self,title,director,genre,language,watched_date,stars,notes):

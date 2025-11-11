@@ -20,3 +20,8 @@ books:
   notes: Fully delves into the experience of being a woman
   stars: '9'
   title: Frankenstein
+- author: James Baldwin
+  finished_date: '2025-11-22'
+  notes: relatable book
+  stars: '6'
+  title: Giovanni's Room
