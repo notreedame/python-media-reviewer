@@ -1,11 +1,12 @@
 class Book:
+    #book class constructor
     def __init__(self,title,author,finished_date,stars,notes):
         self.title=title
         self.author=author
         self.finished_date=finished_date
         self.stars=stars
         self.notes=notes
-
+    #update methods
     def update_title(self,title):
         self.title=title
 
@@ -21,6 +22,7 @@ class Book:
     def update_notes(self,notes):
         self.notes=notes
 
+    #display book information
     def get_book_info(self):
         print("Book Information")
         print("----------------")
@@ -29,4 +31,3 @@ class Book:
         print(f"Finished Date : {self.finished_date}")
         print(f"Rating        : {self.stars}")
         print(f"Notes         : {self.notes}")
-

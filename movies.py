@@ -1,5 +1,6 @@
 
 class Movie:
+    #Movie class constructor
     def __init__(self,title,director,genre,language,watched_date,stars,notes):
         self.title=title
         self.director=director
@@ -8,7 +9,8 @@ class Movie:
         self.watched_date=watched_date
         self.stars=stars
         self.notes=notes
-
+    
+    #update methods
     def update_title(self,title):
         self.title=title
 
@@ -30,6 +32,7 @@ class Movie:
     def update_notes(self,notes):
         self.notes=notes
 
+    #display movie information
     def get_movie_info(self):
         print("Movie Information")
         print("----------------")

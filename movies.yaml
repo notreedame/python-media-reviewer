@@ -1,24 +1,37 @@
 movies:
-  - title: Inception
-    director: Christopher Nolan
-    genre: Sci-Fi
-    language: English
-    watched_date: 2024-01-08
-    rating: 9
-    notes: Mind-bending thriller about dreams
-
-  - title: The Shawshank Redemption
-    director: Frank Darabont
-    genre: Drama
-    language: English
-    watched_date: 2024-02-14
-    rating: 10
-    notes: Best prison escape movie ever made
-
-  - title: Spirited Away
-    director: Hayao Miyazaki
-    genre: Animation
-    language: Japanese
-    watched_date: 2024-03-05
-    rating: 10
-    notes: Gorgeous Studio Ghibli masterpiece
+- director: Christopher Nolan
+  genre: Science Fiction
+  language: English
+  notes: A mind-bending thriller that explores the nature of dreams and reality.
+  stars: 5
+  title: Inception
+  watched_date: 2024-01-25
+- director: Bong Joon-ho
+  genre: Thriller
+  language: Korean
+  notes: A darkly comedic social commentary on class disparity.
+  stars: 5
+  title: Parasite
+  watched_date: 2024-02-18
+- director: Wes Anderson
+  genre: Comedy/Drama
+  language: English
+  notes: A visually stunning film with quirky characters and a whimsical storyline.
+  stars: 4
+  title: The Grand Budapest Hotel
+  watched_date: 2024-03-05
+- director: Hayao Miyazaki
+  genre: Animation/Fantasy
+  language: Japanese
+  notes: A beautifully crafted animated film that captures the magic of childhood
+    and imagination.
+  stars: 5
+  title: Spirited Away
+  watched_date: 2024-04-12
+- director: Wong Kar Wai
+  genre: Romance
+  language: Chinese
+  notes: i liked it
+  stars: '9'
+  title: In the Mood for Love
+  watched_date: 25-11-2022
