@@ -4,7 +4,7 @@ books:
   notes: A fascinating blend of fantasy, romance, and political satire set in Soviet
     Russia.
   stars: 5
-  title: Master and Margarita
+  title: Master and Margarrita
 - author: George Orwell
   finished_date: '2024-02-20'
   notes: A chilling dystopian novel about totalitarianism and surveillance.
@@ -15,3 +15,8 @@ books:
   notes: A classic fantasy adventure that sets the stage for the Lord of the Rings.
   stars: 5
   title: The Hobbit
+- author: Mary Shelley
+  finished_date: '2025-08-25'
+  notes: Fully delves into the experience of being a woman
+  stars: '9'
+  title: Frankenstein

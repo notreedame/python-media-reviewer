@@ -1,3 +1,4 @@
+import datetime 
 def edit_book(books):
     num=1 #counter for listing books
     print()
@@ -18,11 +19,11 @@ def edit_book(books):
         #display edit menu with current book info
         print("\nEdit Book")
         print("-------------")
-        print("1. Title         : {book.title}")
-        print("2. Author        : {book.author}")
-        print("3. Finished Date : {book.finished_date}")
-        print("4. Rating        : {book.stars}")
-        print("5. Notes         : {book.notes}")
+        print(f"1. Title         : {book.title}")
+        print(f"2. Author        : {book.author}")
+        print(f"3. Finished Date : {book.finished_date}")
+        print(f"4. Rating        : {book.stars}")
+        print(f"5. Notes         : {book.notes}")
         print("6. Back to Previous Menu")
 
         edit_book_choice = input(f"\nSelect field to edit: ")
@@ -30,24 +31,57 @@ def edit_book(books):
         match edit_book_choice:
             case "1":
                 #update title
-                book.update_title(input("New title: "))
-                print("Updated!")
+                while True:
+                    new_title = input("New Title: ")
+                    try:
+                        non_empty_string_validation(new_title)
+                        book.update_title(new_title)
+                        print("Updated!")
+                        break
+                    except ValueError:
+                        print("Title cannot be empty.")
             case "2":
                 #update author
-                book.update_author(input("New author: "))
-                print("Updated!")
+                while True:
+                    new_author = input("New Author: ")
+                    try:
+                        non_empty_string_validation(new_author)
+                        book.update_author(new_author)
+                        print("Updated!")
+                        break
+                    except ValueError:
+                        print("Author name cannot be empty.")
             case "3":
                 #update finished date
-                book.update_finished_date(input("New date (YYYY-MM-DD): "))
-                print("Updated!")
+                while True:
+                    new_date = input("New date (YYYY-MM-DD): ")
+                    if date_validation(new_date):
+                        book.update_finished_date(new_date)
+                        print("Updated!")
+                        break
+                    print("Invalid date format. Please use YYYY-MM-DD.")
             case "4":
                 #update stars/rating
-                book.update_stars(input("New rating (1-10): "))
-                print("Updated!")
+                while True:
+                    stars =input("New rating (1-10): ")
+                    try:
+                        rating_validation(stars)
+                        book.update_stars(stars)
+                        print("Updated!")
+                        break
+                    except ValueError:  
+                        print("Invalid rating. Please enter a number between 1 and 10.")
             case "5":
                 #update notes
-                book.update_notes(input("New notes: "))
-                print("Updated!")
+                while True:
+                    note=input("New Note: ")
+                    try:
+                        non_empty_string_validation(note)
+                        book.update_notes(note)
+                        print("Updated!")
+                        break
+                    except ValueError:
+                        print("Notes cannot be empty.")
             case "6":
                 #go back to previous menu
                 print("Returning to previous menu...")
@@ -90,32 +124,80 @@ def edit_movie(movies):
         match edit_movie_choice:
             case "1":
                 #update title
-                movie.update_title(input("New Title: "))
-                print("Updated!")
+                while True:
+                    new_title = input("New Title: ")
+                    try:
+                        non_empty_string_validation(new_title)
+                        movie.update_title(new_title)
+                        print("Updated!")
+                        break
+                    except ValueError:
+                        print("Title cannot be empty.")
             case "2":
                 #update director
-                movie.update_director(input("New Director: "))
-                print("Updated!")
+                while True:
+                    new_director = input("New Director: ")
+                    try:
+                        non_empty_string_validation(new_director)
+                        movie.update_director(new_director)
+                        print("Updated!")
+                        break
+                    except ValueError:
+                        print("Director name cannot be empty.")
             case "3":
                 #update genre
-                movie.update_genre(input("New Genre: "))
-                print("Updated!")
+                while True:
+                    new_genre = input("New Genre: ")
+                    try:
+                        non_empty_string_validation(new_genre)
+                        movie.update_genre(new_genre)
+                        print("Updated!")
+                        break
+                    except ValueError:
+                        print("Genre cannot be empty.")
             case "4":
                 #update language
-                movie.update_language(input("New Language: "))
-                print("Updated!")
+                while True:
+                    new_lang = input("New Language: ")
+                    try:
+                        language_validation(new_lang)
+                        movie.update_language(new_lang)
+                        print("Updated!")
+                        break
+                    except ValueError as e:
+                        print(str(e))
             case "5":
                 #update watched date
-                movie.update_watched_date(input("New Watched Date: "))
-                print("Updated!")
+                while True:
+                    new_date = input("New date (YYYY-MM-DD): ")
+                    if date_validation(new_date):
+                        movie.update_watched_date(new_date)
+                        print("Updated!")
+                        break
+                    print("Invalid date format. Please use YYYY-MM-DD.")
             case "6":
                 #update stars/rating
-                movie.update_stars(input("New Rating: "))
-                print("Updated!")
+                while True:
+                    rating =input("New rating (1-10): ")
+                    try:
+                        rating_validation(rating)
+                        movie.update_stars(rating)
+                        print("Updated!")
+                        break
+                    except ValueError:
+                        print("Invalid rating. Please enter a number between 1 and 10.")
             case "7":
                 #update notes
-                movie.update_notes(input("New Note: "))
-                print("Updated!")
+                while True:
+                    note=input("New Note: ")
+
+                    try:
+                        non_empty_string_validation(note)
+                        movie.update_notes(note)
+                        print("Updated!")
+                        break
+                    except ValueError:
+                        print("Notes cannot be empty.")
             case "8":
                 #go back to previous menu
                 print("returning to previous menu...")
@@ -127,7 +209,7 @@ def edit_movie(movies):
 #display main menu
 def get_main_menu(): 
     print("===================================")
-    print("    Welcome to Your Media Tracker  ")
+    print("    Welcome to Your Media Logger  ")
     print("===================================\n")
     print("              Main Menu")
     print("-----------------------------------")
@@ -155,3 +237,33 @@ def get_books_menu():
         print("3. Update Book")
         print("4. Back to Main Menu")
 
+#date validation function
+def date_validation(date_text):
+    try:
+        datetime.datetime.strptime(date_text, "%Y-%m-%d")
+        return True
+    except ValueError:
+        return False
+    
+#rating validation function
+def rating_validation(rating_text):
+    if not rating_text.isdigit() or not(1 <= int(rating_text) <= 10):
+        raise ValueError("Invalid rating. Please enter a number between 1 and 10.")
+    return True
+    
+#string non-empty validation function
+def non_empty_string_validation(input_text):
+    if not input_text.strip():
+        raise ValueError("Input cannot be empty.")
+    return True
+
+#language validation function
+def language_validation(language_text):
+    new_lang= language_text.strip()
+    if not new_lang:
+        raise ValueError("Language cannot be empty.")
+    elif not new_lang.isalpha():
+        raise ValueError("Language must contain only letters.")
+    elif len(new_lang) < 2 or len(new_lang) > 30:
+        raise ValueError("Language length must be between 2 and 30 characters.")
+    return True
