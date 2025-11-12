@@ -4,3 +4,19 @@ python = "3.14"
 [tasks.setup]
 description = "Set up dev environment"
 run = "python -m venv env && ./env/bin/pip install -r requirements.txt && echo 'Run: source env/bin/activate'"
+
+[tasks.prometheus]
+description = "Run Prometheus with local config"
+run = "prometheus --config.file=prometheus.yml --web.listen-address=':9090'"
+
+[tasks.run_app]
+description = "Run the media logger app with metrics exposed"
+run = "source env/bin/activate && python main.py"
+
+[tasks.run_all]
+description = "Run Prometheus and app together"
+run = """
+mise run prometheus &
+sleep 3
+mise run run_app
+"""

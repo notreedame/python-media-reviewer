@@ -2,7 +2,10 @@ from books import Book
 from movies import Movie
 import yaml
 import logging
+# logging
 from pythonjsonlogger import jsonlogger
+# prometheus_client
+from prometheus_client import Counter, Histogram, start_http_server
 import datetime
 
 #initialize lists and loop control variable
@@ -14,6 +17,14 @@ loop_continue = True
 BOOK_FILE = "books.yaml" #save books data
 MOVIE_FILE = "movies.yaml" #save movies data
 LOG_FILE = "media_tracker.json" #log file
+
+#counters for prometheus metrics
+BOOKS_ADDED = Counter('books_added', 'Number of books added')
+MOVIES_ADDED = Counter('movies_added', 'Number of movies added')
+
+#histograms for prometheus metrics
+BOOK_EDIT_TIME = Histogram('book_edit_time_seconds', 'Time taken to edit a book')
+MOVIE_EDIT_TIME = Histogram('movie_edit_time_seconds', 'Time taken to edit a movie')
 
 #configure logging
 logger = logging.getLogger(LOG_FILE)
@@ -37,6 +48,8 @@ def get_current_timestamp():
 
 # Log application start BEFORE loading data
 logger.info("Application started", extra={"timestamp": get_current_timestamp()})
+
+start_http_server(8000)  # Start Prometheus metrics server on port 8000
 
 try:
     with open(BOOK_FILE, 'r') as b_file:
@@ -139,7 +152,7 @@ def language_validation(language_text):
         raise ValueError("Language length must be between 2 and 30 characters.")
     return True
 
-
+@BOOK_EDIT_TIME.time()
 def edit_book(books):
     num=1 #counter for listing books
     print()
@@ -235,6 +248,7 @@ def edit_book(books):
             case _: #invalid choice
                 print("Invalid choice.")
 
+@MOVIE_EDIT_TIME.time()
 def edit_movie(movies):
     num=1 #counter for listing movies
     print()
@@ -377,7 +391,6 @@ while loop_continue:
     elif user_input == "1":
         get_books_menu()
         book_choice = input("\nSelect an option: ")
-
         if book_choice == "1":  #add new book
             #get book details from user
             #title input, validation
@@ -429,6 +442,7 @@ while loop_continue:
 
             print("\nBook added successfully!\n")
             logger.info("New book added", extra={"title": title, "author": author})
+            BOOKS_ADDED.inc()  # Increment Prometheus counter for books added
             input()
 
         elif book_choice == "2": #view all books
@@ -442,7 +456,7 @@ while loop_continue:
                     b.get_book_info()   #call get_book_info method from Book class
                 input()
         elif book_choice=="3": #edit book
-            edit_book(books) #call edit_book function
+                edit_book(books) #call edit_book function
         else:
             continue
 
@@ -512,12 +526,13 @@ while loop_continue:
                     break
                 except ValueError:
                     print("Notes cannot be empty.")
-            
-            new_movie = Movie(title, director, genre, language, date, stars, notes)    #create new Movie object
-            movies.append(new_movie) #add new movie to movies list
-            print("\nMovie added successfully!\n")
-            logger.info("New movie added", extra={"title": title, "director": director})
-            input()
+                
+                new_movie = Movie(title, director, genre, language, date, stars, notes)    #create new Movie object
+                movies.append(new_movie) #add new movie to movies list
+                print("\nMovie added successfully!\n")
+                logger.info("New movie added", extra={"title": title, "director": director})
+                MOVIES_ADDED.inc()  # Increment Prometheus counter for movies added
+                input()
 
         elif movie_choice == "2": #view all movie
             if not movies: #if movies list is empty
@@ -527,7 +542,7 @@ while loop_continue:
                     m.get_movie_info() #call get_movie_info method from Movie class
             input()        
         elif movie_choice=="3": #edit movie
-            edit_movie(movies) #call edit_movie function
+                edit_movie(movies) #call edit_movie function
         
         else:
             continue

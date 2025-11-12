@@ -5,3 +5,42 @@
 {"message": "Application exited", "timestamp": "2025-11-11 20:29:30"}
 {"message": "Movies data saved", "movie_count": 5}
 {"message": "Books data saved", "book_count": 5}
+{"message": "Application started", "timestamp": "2025-11-12 15:05:14"}
+{"message": "Books data loaded", "book_count": 5}
+{"message": "Movies data loaded", "movie_count": 5}
+{"message": "New book added", "title": "to kill a mockingbird", "author": "harper lee"}
+{"message": "New movie added", "title": "n432", "director": "34"}
+{"message": "New movie added", "title": "qq", "director": "qq"}
+{"message": "Application started", "timestamp": "2025-11-12 15:11:59"}
+{"message": "Books data loaded", "book_count": 5}
+{"message": "Movies data loaded", "movie_count": 5}
+{"message": "Application started", "timestamp": "2025-11-12 15:12:55"}
+{"message": "Books data loaded", "book_count": 5}
+{"message": "Movies data loaded", "movie_count": 5}
+{"message": "Book notes updated", "extra_data": {"action": "update_book", "field": "notes", "book": "Giovanni's Room", "new_value": "a lot went down over here.."}}
+{"message": "Book rating updated", "extra_data": {"action": "update_book", "field": "rating", "book": "Giovanni's Room", "new_value": "8"}}
+{"message": "Application exited", "timestamp": "2025-11-12 15:14:29"}
+{"message": "Movies data saved", "movie_count": 5}
+{"message": "Books data saved", "book_count": 5}
+{"message": "Application started", "timestamp": "2025-11-12 15:18:01"}
+{"message": "Books data loaded", "book_count": 5}
+{"message": "Movies data loaded", "movie_count": 5}
+{"message": "Book notes updated", "extra_data": {"action": "update_book", "field": "notes", "book": "Giovanni's Room", "new_value": "rly relatable omg"}}
+{"message": "Movie rating updated", "extra_data": {"action": "update_movie", "field": "rating", "movie": "In the Mood for Love", "new_value": "9"}}
+{"message": "Movie notes updated", "extra_data": {"action": "update_movie", "field": "notes", "movie": "In the Mood for Love", "new_value": "oh i wish, i wish unghh"}}
+{"message": "Movie notes updated", "extra_data": {"action": "update_movie", "field": "notes", "movie": "In the Mood for Love", "new_value": "i wish man"}}
+{"message": "Application started", "timestamp": "2025-11-12 15:21:46"}
+{"message": "Books data loaded", "book_count": 5}
+{"message": "Movies data loaded", "movie_count": 5}
+{"message": "Book notes updated", "extra_data": {"action": "update_book", "field": "notes", "book": "Giovanni's Room", "new_value": "relatable"}}
+{"message": "Application exited", "timestamp": "2025-11-12 15:22:02"}
+{"message": "Movies data saved", "movie_count": 5}
+{"message": "Books data saved", "book_count": 5}
+{"message": "Application started", "timestamp": "2025-11-12 15:25:33"}
+{"message": "Books data loaded", "book_count": 5}
+{"message": "Movies data loaded", "movie_count": 5}
+{"message": "Book rating updated", "extra_data": {"action": "update_book", "field": "rating", "book": "1984", "new_value": "4"}}
+{"message": "Book rating updated", "extra_data": {"action": "update_book", "field": "rating", "book": "1984", "new_value": "8"}}
+{"message": "Application exited", "timestamp": "2025-11-12 15:26:45"}
+{"message": "Movies data saved", "movie_count": 5}
+{"message": "Books data saved", "book_count": 5}
