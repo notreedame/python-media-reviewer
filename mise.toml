@@ -20,3 +20,6 @@ mise run prometheus &
 sleep 3
 mise run run_app
 """
+[tasks.test]
+description = "Run automated test cases"
+run = "pytest -v"

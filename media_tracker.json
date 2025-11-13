@@ -44,3 +44,12 @@
 {"message": "Application exited", "timestamp": "2025-11-12 15:26:45"}
 {"message": "Movies data saved", "movie_count": 5}
 {"message": "Books data saved", "book_count": 5}
+{"message": "Application started", "timestamp": "2025-11-13 14:46:15"}
+{"message": "Books data loaded", "book_count": 5}
+{"message": "Movies data loaded", "movie_count": 5}
+{"message": "Application exited", "timestamp": "2025-11-13 14:48:11"}
+{"message": "Movies data saved", "movie_count": 5}
+{"message": "Books data saved", "book_count": 5}
+{"message": "Application started", "timestamp": "2025-11-13 14:51:02"}
+{"message": "Books data loaded", "book_count": 5}
+{"message": "Movies data loaded", "movie_count": 5}
